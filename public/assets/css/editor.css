@@ -1,0 +1,101 @@
+body {
+    overflow-x: hidden;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.ml-24 {
+    margin-left: 24px;
+}
+
+.language-dropdown {
+    top: 20px;
+    position: relative;
+}
+
+.dropdown-trigger {
+    line-height: 56px;
+    width: 169px;
+}
+
+.dropdown-content li>a,
+.dropdown-content li>span {
+    color: #01579b;
+}
+
+#code {
+    height: 640px;
+    margin-top: 16px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.CodeMirror {
+    height: 640px;
+}
+
+.left-bar {
+    background: #f7f7f7;
+    height: 640px;
+    margin-top: 16px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.select-wrapper {
+    margin-right: 32px;
+}
+
+.select-wrapper input.select-dropdown {
+    color: rgb(247, 247, 247);
+    border-bottom: 1px solid rgb(247, 247, 247);
+}
+
+.select-wrapper input.select-dropdown:focus {
+    border-bottom: 1px solid rgb(247, 247, 247);
+}
+
+.select-wrapper .caret {
+    fill: rgb(247, 247, 247)
+}
+
+#toast-container {
+    top: auto !important;
+    bottom: 16px;
+    right: 16px;
+}
+
+#toast-container .toast {
+    font-size: 14px;
+    color: rgb(247, 247, 247);
+    background-color: #01579b;
+}
+
+#managePresetsModal > div {
+    overflow: scroll;
+}
+
+.presets-section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#codeLoader {
+    position: absolute;
+    margin-top: 16px;
+    width: inherit;
+    height: 640px;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+#codeLoader > div {
+    margin-left: 50%;
+    margin-top: 275px;
+}
+
+.coder-item {
+    text-overflow: ellipsis;
+    overflow: hidden; 
+}

@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/css/home.css">
+
+<nav class="nav-extended grey lighten-4">
+  <div class="nav-content blue-text text-darken-4">
+    <span class="nav-title ml-24">
+      <img src="/img/logo.svg">
+    </span>
+    <a data-target="createSessionModal"
+      class="modal-trigger btn-floating btn-large halfway-fab waves-effect waves-light light-blue darken-4">
+      <i class="material-icons">add</i>
+    </a>
+  </div>
+</nav>
+
+<div class="container mt-40">
+  <i id="deleteSession" class="small material-icons">delete</i>
+  <table id="sessionsTable" class="striped centered display">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Mode</th>
+        <th>Date</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{#each data.sessions}}
+      <tr>
+        <td>
+          <label>
+            <input type="checkbox" class="" data-id={{_id}} />
+            <span></span>
+          </label>
+        </td>
+        <td>{{title}}</td>
+        <td>{{mode}}</td>
+        <td>{{date}}</td>
+        <td>
+          <a href="/sessions/{{_id}}" class="waves-effect waves-light btn-small light-blue darken-4">Edit</a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal Structure -->
+<div id="createSessionModal" class="modal">
+  <div class="modal-content">
+    <div class="row">
+      <div class="input-field col s6 offset-s3">
+        <input value="Untitled" id="sessionTitle" type="text" class="validate">
+        <label class="active" for="sessionTitle">Name of candidate</label>
+      </div>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <a href="#!" id="createSession" class="modal-close waves-effect waves-green btn-flat">Create</a>
+  </div>
+</div>
+<script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="/js/home.js"></script>

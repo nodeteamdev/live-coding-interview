@@ -1,0 +1,7 @@
+.public-form {
+    margin-top: 112px;
+}
+
+.public-form button[type="submit"] {
+    width: 100%
+}

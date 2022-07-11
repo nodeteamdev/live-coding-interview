@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 m4 l3"></div>
+    <form class="col s12 m4 l6 public-form" action="/auth/register" method="post">
+      <div class="row">
+        <div class="input-field">
+          <input id="email" type="email" name="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <input id="password" type="password" name="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+            <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Sign Up
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+        <a href="/auth/login">Login</a>
+      </div>
+    </form>
+    <div class="col s12 m4 l3"></div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/css/public.css">

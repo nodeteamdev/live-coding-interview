@@ -1,0 +1,145 @@
+<!-- CodeMirror styles -->
+<link rel="stylesheet" href="/codemirror/lib/codemirror.css">
+<link rel="stylesheet" href="/codemirror/theme/base16-dark.css">
+<link rel="stylesheet" href="/codemirror/theme/base16-light.css">
+<link rel="stylesheet" href="/codemirror/theme/dracula.css">
+<link rel="stylesheet" href="/codemirror/theme/eclipse.css">
+<link rel="stylesheet" href="/codemirror/theme/material.css">
+<link rel="stylesheet" href="/codemirror/theme/monokai.css">
+<link rel="stylesheet" href="/codemirror/theme/neo.css">
+<link rel="stylesheet" href="/codemirror/theme/rubyblue.css">
+<link rel="stylesheet" href="/codemirror/theme/zenburn.css">
+<link rel="stylesheet" href="/codemirror/hint/show-hint.css">
+
+<!-- /CodeMirror styles -->
+
+<link rel="stylesheet" href="/css/editor.css">
+
+<nav class="nav-extended light-blue darken-4">
+    <div class="nav-content">
+        <span class="nav-title ml-24">
+            <a href="/home">
+                <img src="/img/logo-white.svg">
+            </a>
+        </span>
+        <ul class="right hide-on-med-and-down language-dropdown">
+            <li>
+                <label>Tasks <span id="noPresetsSpan" style="display: none;">(right-click to create)</span></label>
+                <select id="presets" class="light-blue darken-4">
+                    {{#each data.presets }}
+                        <option value="{{this._id}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
+            </li>
+            <li>
+                <label>Language</label>
+                <select id="language" class="">
+                    {{#each data.language }}
+                        <option val="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </li>
+            <li>
+                <label>Theme</label>
+                <select id="theme" class="light-blue darken-4">
+                    {{#each data.themes }}
+                        <option val="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </li>
+            <li id="share"><a href="#" title="share"><i class="material-icons">share</i></a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="row">
+    <div id="contextmenu" class="dropdown-trigger" data-target="dropdown-contextmenu" style="position: absolute;"></div>
+    <ul id="dropdown-contextmenu" class="dropdown-content">
+        <li id="managePresets"><span>Manage tasks<span></li>
+        <li id="savePreset"><span>Save as task<span></li>
+    </ul>
+
+    <a href="#managePresetsModal" class="modal-trigger"></a>
+    <div id="managePresetsModal" class="modal">
+        <div class="modal-content">
+            <h3>Tasks</h3>
+            <div id="managePresetsList">
+                {{#unless data.presets}}
+                <div class="divider"></div>
+                    <div class="section presets-section">
+                        <h5 class="left">There are no tasks</h5>
+                    </div>
+                {{/unless}}
+                {{#each data.presets }}
+                    <div class="divider"></div>
+                    <div class="section presets-section">
+                        <h5 class="left">{{this.name}}</h5>
+                        <a class="btn-floating waves-effect waves-light red right delete-preset-btn" data-preset-id="{{this._id}}">
+                            <i class="material-icons">delete</i>
+                        </a>
+                    </div>
+                {{/each}}
+            </div>
+            <div class="divider"></div>
+        </div>
+    </div>
+
+    <a href="#presetNameModal" class="modal-trigger"></a>
+    <div id="presetNameModal" class="modal">
+        <div class="modal-content">
+            <label for="presetName">Enter name for task</label>
+            <input id="presetName" type="text">
+            <a id="submitPreset" class="modal-close">Save</a>
+        </div>
+    </div>
+
+    <div class="left-bar col s2">
+        <ul id="codersList" class="collection"></ul>
+    </div>
+
+    <div class="col s10">
+    <div id="codeLoader">
+        <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+            <div class="circle"></div>
+        </div><div class="gap-patch">
+            <div class="circle"></div>
+        </div><div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+        </div>
+    </div>
+    </div>
+        <div id="code">{{{data.code}}}</div>
+    </div>
+</div>
+
+<script>
+    window.locals = {};
+    window.locals.userName = '{{data.name}}';
+    window.locals.userId = '{{data.userId}}';
+    window.locals.presets = [
+        {{#each data.presets}}
+        {
+            name: '{{this.name}}',
+            value: `{{this.code}}`,
+            id: '{{this._id}}'
+        },
+        {{/each}}
+    ];
+</script>
+
+<script src="/lib/socket.io.min.js"></script>
+<!-- CodeMirror scripts -->
+<script src="/codemirror/lib/codemirror.js" defer=""></script>
+<script src="/codemirror/hint/show-hint.js" defer=""></script>
+<script src="/codemirror/hint/javascript-hint.js" defer=""></script>
+<script src="/codemirror/mode/markdown/markdown.js" defer=""></script>
+<script src="/codemirror/mode/xml/xml.js" defer=""></script>
+<script src="/codemirror/mode/css/css.js" defer=""></script>
+<script src="/codemirror/mode/sass/sass.js" defer=""></script>
+<script src="/codemirror/mode/javascript/javascript.js" defer=""></script>
+
+<!-- /CodeMirror scripts -->
+<script src="/js/editor.js?v={{{data.appVersion}}}"></script>

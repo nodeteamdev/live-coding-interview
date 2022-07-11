@@ -1,0 +1,61 @@
+input:not([type]):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
+input[type=time]:not(.browser-default):focus:not([readonly]),
+input[type=date]:not(.browser-default):focus:not([readonly]),
+input[type=datetime]:not(.browser-default):focus:not([readonly]),
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=search]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #0D47A1;
+    -webkit-box-shadow: 0 1px 0 0 #0D47A1;
+    box-shadow: 0 1px 0 0 #0D47A1;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.ml-24 {
+    margin-left: 24px;
+}
+
+select[aria-controls="sessionsTable"] {
+    display: block;
+    height: 28px;
+}
+
+.dataTables_filter input[type="search"] {
+    height: 28px;
+}
+
+[type="checkbox"]:checked+span:not(.lever):before{
+    border-right: 2px solid #01579b;
+    border-bottom: 2px solid #01579b;
+    top: -2px;
+    left: -2px;
+    width: 8px;
+    height: 14px;
+}
+
+[type="checkbox"]+span:not(.lever):before, [type="checkbox"]:not(.filled-in)+span:not(.lever):after {
+    width: 14px;
+    height: 14px;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+
+#deleteSession {
+    position: absolute;
+    display: none;
+    color: #F44336;
+    cursor: pointer;
+    z-index: 9999;
+    margin-left: 77px;
+    margin-top: 20px;
+}
