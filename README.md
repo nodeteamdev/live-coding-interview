@@ -3,6 +3,20 @@
 # Simple Live Coding Tool
 This is a simple live coding tool. It is not a full-featured code editor.
 
+## Features
+* **Live coding**
+* **Share your code**
+* **Save tasks**
+* **Load tasks**
+* **Multi-editor**
+* **Code editor**
+* **Code autocomplete**
+* **Code syntax highlighting**
+* **Thames editor** - darcula | monokai | neo | eclipse ...
+* **Code language support** - JavaScript | CSS | SASS | XML | Markdown
+
+_Note: Right click at the editor to see the context menu._
+
 
 ## Requirements
 * [Node.js](https://nodejs.org/) >= 14.0.0
@@ -28,20 +42,6 @@ or using pm2:
 ```bash
 pm2 start ecosystem.config.js
 ```
-
-## Features
-* **Live coding**
-* **Share your code** 
-* **Save tasks**
-* **Load tasks**
-* **Multi-editor**
-* **Code editor**
-* **Code autocomplete**
-* **Code syntax highlighting**
-* **Thames editor** - darcula|monokai|neo|eclipse...etc.
-* **Code language support** - JavaScript|CSS|SASS|XML|Markdown
-
-_Note: Right click at the editor to see the context menu._
 
 ## Screenshots
 ![Dashboard](https://i.imgur.com/u3TOzVS.png)
